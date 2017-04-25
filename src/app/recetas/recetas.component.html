@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-lista-recetas (recetaSeleccionada)="receta = $event"></app-lista-recetas>
+  </div>
+  <div class="col-md-7">
+    <app-receta-info [recetaSeleccionada]="receta"></app-receta-info>
+  </div>
+</div>

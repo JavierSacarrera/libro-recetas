@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-12">
+      <a href="#" class="btn btn-success">Nueva Receta</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <app-receta-item [receta]="receta" (click)="seleccionarReceta()"></app-receta-item>
+    </ul>
+  </div>
+</div>
