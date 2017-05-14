@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-12">
+    <form class="anadir-lista-compra" (ngSubmit)="enviarFormulario(f.value)" #f="ngForm">
+      <div class="row">
+        <div class="col-md-5 form-group">
+          <label for="item-nombre">Nombre</label>
+          <input type="text" id="item-nombre" required class="form-control" [ ngModel]="ingrediente.nombre" name="nombre">
+        </div>
+        <div class="col-md-2 form-group">
+          <label for="item-cantidad">Cantidad</label>
+          <input type="text" id="item-cantidad" required class="form-control" [ ngModel]="ingrediente.cantidad" name="cantidad">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-success" type="submit" *ngIf="esNuevo" [disabled]="!
+f.valid">Añadir</button>
+          <button class="btn btn-success" type="submit" *ngIf="!esNuevo" [disabled ]="!f.valid">Guardar</button>
+          <button class="btn btn-danger" type="button" *ngIf="!esNuevo" (click )="eliminar()">Eliminar Item</button>
+          <button class="btn btn-primary" type="button" *ngIf="!esNuevo" (click )="limpiar()">Limpiar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

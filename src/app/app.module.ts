@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -11,7 +11,11 @@ import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.com
 import { RecetaInfoComponent } from './recetas/receta-info/receta-info.component';
 import { EditarRecetaComponent } from './recetas/editar-receta/editar-receta.component';
 import { RecetaItemComponent } from './recetas/lista-recetas/receta-item.component';
-import { AnadirItemComponent } from './lista-compra/anadir-item.component';
+import { AnadirListaCompraComponent } from './lista-compra/anadir-lista-compra.component';
+import { ListaCompraService } from './lista-compra/lista-compra.service';
+import { InfoRecetaComponent } from './recetas/info-receta/info-receta.component';
+import { routing } from './app.routing';
+import { InicioRecetaComponent } from './recetas/inicio-receta.component';
 
 @NgModule({
   declarations: [
@@ -20,16 +24,21 @@ import { AnadirItemComponent } from './lista-compra/anadir-item.component';
     RecetasComponent,
     ListaCompraComponent,
     ListaRecetasComponent,
+    EditarRecetaComponent,
     RecetaInfoComponent,
     RecetaItemComponent,
-    AnadirItemComponent
+    AnadirListaCompraComponent,
+    InfoRecetaComponent,
+    InicioRecetaComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ListaCompraService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

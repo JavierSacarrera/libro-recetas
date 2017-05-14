@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col-md-10">
-    <app-anadir-item></app-anadir-item>
-    <hr>
-    <ul class="list-group">
-      <a class="list-group-item">Ingrediente 1</a>
-    </ul>
-  </div>
+<div class="col-md-10">
+<app-anadir-lista-compra [ingrediente]="ingredienteSeleccionado" (vaciado)="vaciarFormulario()"></app-anadir-lista-compra>
+<hr>
+<ul class="list-group">
+<a class="list-group-item" *ngFor="let item of items" (click)="seleccionarItem(item)">{{ item.nombre }} - {{ item.cantidad}}</a>
+</ul>
+</div>
 </div>

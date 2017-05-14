@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="col-md-12">
-      <a href="#" class="btn btn-success">Nueva Receta</a>
-  </div>
+<div class="col-md-12">
+<a [routerLink]="['nueva']" class="btn btn-success">Receta nueva</a>
+</div>
 </div>
 <div class="row">
-  <div class="col-md-12">
-    <ul class="list-group">
-      <app-receta-item [receta]="receta" (click)="seleccionarReceta()"></app-receta-item>
-    </ul>
-  </div>
+<div class="col-md-12">
+<ul class="list-group">
+<app-receta-item *ngFor="let receta of recetas; let indice = index" [receta]="receta" [recetaId]="indice"></app-receta-item>
+</ul>
+</div>
 </div>

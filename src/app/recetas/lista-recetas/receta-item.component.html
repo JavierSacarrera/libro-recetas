@@ -1,11 +1,9 @@
-<a class="list-group-item">
-  <span class="row">
-    <div class="col-md-8 pull left">
-      <h4 class="list-group-item-heading">{{receta.nombre}}</h4>
-      <p class="list-group-item-text">{{receta.descripcion}}</p>
-    </div>
-    <span class="col-md-4-pull-right">
-      <img src="{{receta.imagenUrl}}">
-    </span>
-  </span>
+<a [routerLink]="[recetaId]" class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{receta.nombre}}</h4>
+    <p class="list-group-item-text">{{receta.descripcion}}</p>
+  </div>
+  <span class="pull-right">
+<img src="{{receta.imagenUrl}}" alt="" class="img-responsive" />
+</span>
 </a>

@@ -1,3 +1,81 @@
-<p>
-  editar-receta works!
-</p>
+<div class="row">
+<div class="col-md-12">
+<form [formGroup]="formularioReceta" (ngSubmit)="enviarFormulario()">
+<div class="row">
+<div class="col-md-12">
+<button type="submit" class="btn btn-success" [disabled]="!formularioReceta.valid">Guardar</button>
+<a class="btn btn-danger" (click)="cancelar()">Cancelar</a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+<label for="nombre">Nombre</label>
+<input type="text" id="nombre" class="form-control" formControlName="nombre">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+<label for="imagen-url">Url imagen</label>
+<input type="text" class="form-control" id="imagen-url" formControlName="imagenUrl" #imagen>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="img">
+<img [src]="imagen.value" class="img-responsive">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="form-group">
+<label for="descripcion">Descripción</label>
+<textarea type="text" id="descripcion" rows="6" class="form-control" formControlName="descripcion"></textarea>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<ul class="list-group" formArrayName="ingredientes">
+<div class="row" *ngFor="let ingrediente of
+formularioReceta.controls['ingredientes'].controls; let indice = index">
+<div formGroupName="{{indice}}">
+<div class="col-md-5">
+<input type="text" class="form-control" formControlName="nombre">
+</div>
+<div class="col-md-5">
+<input type="text" class="form-control" formControlName="cantidad">
+</div>
+<div class="col-md-2">
+<button class="btn btn-danger" (click)="eliminarItem(indice)"
+>X</button>
+</div>
+</div>
+<br><br>
+</div>
+</ul>
+</div>
+</div>
+</form>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-md-12">
+<div class="form-group row">
+<div class="col-md-5">
+<input type="text" class="form-control" #nombreItem>
+</div>
+<div class="col-md-5">
+<input type="text" class="form-control" #cantidadItem>
+</div>
+<div class="col-md-2">
+<button type="button" class="btn btn-primary" (click)="anadirItem(nombreItem.value, cantidadItem.value)">+</button>
+</div>
+</div>
+</div>
+</div>

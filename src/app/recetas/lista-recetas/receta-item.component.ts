@@ -6,12 +6,9 @@ import { Receta } from '../receta';
   styleUrls: ['./receta-item.component.css']
 })
 export class RecetaItemComponent implements OnInit {
-
   @Input() receta: Receta;
-
+  @Input() recetaId: number;
   constructor() { }
-
   ngOnInit() {
   }
-
 }
